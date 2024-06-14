@@ -1,57 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mascotas Perdidas En Saladillo</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f8f9fa;
-            color: #333;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            margin-bottom: 1em;
-        }
-        p {
-            margin-bottom: 2em;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Mascotas Perdidas En Saladillo</h1>
-    <p>Bienvenido a la página de Mascotas Perdidas En Saladillo. Aquí puedes subir imágenes de mascotas perdidas y ver imágenes de mascotas encontradas.</p>
-    <button onclick="subirImagen()">Subir imagen de mascota perdida</button>
-    <button onclick="verGaleria()">Ver galería de mascotas encontradas</button>
-    <script>
-        function subirImagen() {
-            // Aquí iría el código para subir una imagen.
-            alert("Esta función aún no está implementada.");
-        }
-        function verGaleria() {
-            // Aquí iría el código para ver la galería de imágenes.
-            alert("Esta función aún no está implementada.");
-        }
-    </script>
+    <header>
+        <h1>Mascotas Perdidas En Saladillo</h1>
+    </header>
+    <main>
+        <section class="buttons">
+            <button id="upload-btn">Subir Imagen de Animal Perdido</button>
+            <button id="gallery-btn">Ver Galería de Animales Encontrados</button>
+        </section>
+        <section id="upload-section" class="section">
+            <input type="file" id="image-input" accept="image/*">
+            <button id="submit-btn">Subir Imagen</button>
+            <div id="upload-status"></div>
+        </section>
+        <section id="gallery-section" class="section">
+            <div id="gallery"></div>
+        </section>
+    </main>
+    <script src="app.js"></script>
 </body>
 </html>
