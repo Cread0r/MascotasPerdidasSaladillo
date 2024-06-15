@@ -19,11 +19,17 @@
     <main>
         <section id="accion1">
             <h2>Llamada a la acción 1</h2>
-            <p>Contenido de la primera llamada a la acción.</p>
+            <p>Sube tu imagen aquí:</p>
+            <form action="/upload_image" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*">
+                <input type="submit" value="Subir imagen">
+            </form>
         </section>
         <section id="accion2">
             <h2>Llamada a la acción 2</h2>
-            <p>Contenido de la segunda llamada a la acción.</p>
+            <div id="galeria">
+                <!-- Las imágenes subidas se mostrarán aquí -->
+            </div>
         </section>
     </main>
     <footer>
