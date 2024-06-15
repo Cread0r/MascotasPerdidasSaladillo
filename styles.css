@@ -27,14 +27,27 @@ header {
     display: none;
 }
 
-#gallery img {
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img-container {
+    margin: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-img {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    margin: 5px;
 }
 
 #upload-status {
     margin-top: 10px;
     color: white;
-} 
+}
