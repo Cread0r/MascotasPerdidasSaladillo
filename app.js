@@ -1,4 +1,13 @@
 // Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyDS6dhch1lCwe9MBEzZv85_F09LX25H_-s",
+  authDomain: "mascotas-perdidas-saladillo.firebaseapp.com",
+  projectId: "mascotas-perdidas-saladillo",
+  storageBucket: "mascotas-perdidas-saladillo.appspot.com",
+  messagingSenderId: "35226516022",
+  appId: "1:35226516022:web:6125674af0597709b1f697",
+  measurementId: "G-NK8PJ1WE2E"
+};
 const app = firebase.initializeApp(firebaseConfig);
 const storage = firebase.storage();
 const firestore = firebase.firestore();
