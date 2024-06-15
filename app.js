@@ -97,9 +97,15 @@ function loadGallery() {
     gallery.innerHTML = '';
     firestore.collection('animals').get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
+            const imgContainer = document.createElement('div');
+            imgContainer.classList.add('img-container');
+            
             const img = document.createElement('img');
             img.src = doc.data().url;
-            gallery.appendChild(img);
+            img.classList.add('gallery-img');
+            imgContainer.appendChild(img);
+            
+            gallery.appendChild(imgContainer);
         });
     });
-        }
+}
