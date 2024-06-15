@@ -30,7 +30,7 @@ function checkImage() {
 }
 
 async function analyzeImage(base64, file) {
-    const apiKey = 'YOUR_HUGGING_FACE_API_KEY';
+    const apiKey = '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';
     const url = 'https://api-inference.huggingface.co/models/openai/clip-vit-base-patch32';
 
     const request = {
