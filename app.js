@@ -1,3 +1,8 @@
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const storage = firebase.storage();
+const firestore = firebase.firestore();
+
 document.getElementById('upload-btn').addEventListener('click', () => {
     document.getElementById('upload-section').style.display = 'block';
     document.getElementById('gallery-section').style.display = 'none';
@@ -57,7 +62,7 @@ function isImageSafe(detections) {
 }
 
 function uploadImage(file) {
-    const storageRef = firebase.storage().ref('animals/' + file.name);
+    const storageRef = storage.ref('animals/' + file.name);
     const uploadTask = storageRef.put(file);
 
     uploadTask.on('state_changed', 
@@ -78,7 +83,7 @@ function uploadImage(file) {
 }
 
 function saveImageURL(url) {
-    firebase.firestore().collection('animals').add({
+    firestore.collection('animals').add({
         url: url
     }).then(() => {
         document.getElementById('upload-status').innerText = 'Imagen subida exitosamente.';
@@ -90,11 +95,11 @@ function saveImageURL(url) {
 function loadGallery() {
     const gallery = document.getElementById('gallery');
     gallery.innerHTML = '';
-    firebase.firestore().collection('animals').get().then((querySnapshot) => {
+    firestore.collection('animals').get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             const img = document.createElement('img');
             img.src = doc.data().url;
             gallery.appendChild(img);
         });
     });
-      } 
+        }
